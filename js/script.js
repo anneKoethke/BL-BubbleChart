@@ -1,3 +1,10 @@
+// ToDos: 
+// - BubbleChart mit Force-Simulation der Fouls, roten und gelben Karten aller Bundesligavereine einer Saison (16/17)
+// - Erweiterung der Darstellung über TABs im HTLM: 
+//    (1) Timeline für jeweils einen Verein: F,G,R über einzelne Spieltage
+//    (2) Auflistung der Vereine nebeneinander
+//    Vorbild: https://archive.nytimes.com/www.nytimes.com/interactive/2012/02/13/us/politics/2013-budget-proposal-graphic.html
+
 (function() {
   var canvas_size = 500;
   var canvas = d3.select('body').append('svg')
