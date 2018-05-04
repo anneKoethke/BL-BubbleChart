@@ -17,22 +17,44 @@ function init() {
   });
 }
 
-function ready(data) {
-  console.log("in ready(data)");
-  initSvg();
-  
-}
-
+// SVG with Group-Element
 function initSvg() {
   console.log("in initSvg()");
   var canvas_size = 500;
   var canvas = d3.select('body').append('svg')
     .attr('width', canvas_size)
-    .attr('height', canvas_size);
+    .attr('height', canvas_size)
+    .append('g')
+    .attr("transform", "translate(0,0)");
+}
+
+// Quelle: https://www.dashingd3js.com/d3js-scales (04.05.18)
+function initScale(data) {
+  console.log("in initScale()");
+  var scaleRadius = d3.scaleSqrt()
+    .domain([d3.min(data), d3.max(data)]) // hier datenpunkte nutzen: max, min
+    .range([1,100]);  
+}
+
+function initForce() {
+  console.log("in initForce");
 }
 
 
+function makeBubbles(data) {
+  console.log("in makeBubbles");
+  var fouls = 0;
+}
 
+// main function: data ready
+function ready(data) {
+  console.log("in ready(data)");
+  // Youtube-Video-Anleitung
+  initSvg();
+  initScale(data);
+  initForce();
+  makeBubbles(data);
+}
 
 // start der Anwendung -> nachher besser mit korrektem NameSpacing
 init();
